@@ -21,9 +21,9 @@ export const Location = () => {
            <Text className={styles.title} tag='h2'>{map.title}</Text>
            <Text className={styles.subtitle} tag='span'>{map.subtitle}</Text>
       </div>
-      <YMaps query={{ apikey: '52b2f753-bf22-4e06-b223-97be2fd204b4' }}>
+      <YMaps query={{ apikey: process.env.YMAP_APIKEY}}>
           <div>
-              <Map className={styles.map} defaultState={{ center: [55.7528488147893,37.62321311084745], zoom: 12 }}>
+              <Map className={styles.map} defaultState={{ center: map.center, zoom: map.zoom, behaviors: ["disable('scrollZoom')"]}}>
                   {map.locations.map((location, index) => (
               <Placemark key={index} geometry={location} />
             ))}
