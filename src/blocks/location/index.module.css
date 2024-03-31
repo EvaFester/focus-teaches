@@ -11,6 +11,10 @@
     background-color: #525252;
 }
 
+.mapContainer{
+    width: 100vw;
+}
+
 .title{
     font-size: 3em;
     font-weight: 400;
