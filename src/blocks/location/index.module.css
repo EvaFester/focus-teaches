@@ -15,13 +15,24 @@
     width: 100vw;
 }
 
+.text{
+    padding: 0 2em;
+}
+
 .title{
-    font-size: 3em;
+    font-size: 2rem;
     font-weight: 400;
     color: var(--text-base);
 }
 
 .subtitle{
-    font-size: 2.25em;
+    font-size: 1.2rem;
     color: var(--text-secondary);
+}
+
+@media (max-width: 1440px){
+
+    .title{
+        font-size: 1.7rem;
+    }
 }
