@@ -2,17 +2,20 @@
 
 import { ResponseDto } from '@/dto/order.dto'
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react"
-import { Input } from '../input'
+
+import styles from './index.module.css'
 import { Button } from '../button'
 
 const MASK = '+7 (___) ___-__-__'
 const MASK_PLUG = '_'
 const REGEXP = /\d/g
 
+// TODO: validation error msg
+// TODO: success/error modal
 // TODO: allow one extra character for phone number
 export const Form = () => {
   const [loading, setLoading] = useState(false)
-  const [phone, setPhone] = useState(MASK)
+  const [phone, setPhone] = useState('')
   const [name, setName] = useState('')
   const phoneRef = useRef<HTMLInputElement>(null)
 
@@ -22,19 +25,19 @@ export const Form = () => {
   }, [phoneRef, phone])
 
   function updatePhone(evt: ChangeEvent<HTMLInputElement>) {
-    const digits = evt.target.value.match(REGEXP)?.slice(1)
+    const digits = evt.target.value.startsWith(MASK[0])
+      ? evt.target.value.match(REGEXP)?.slice(1)
+      : evt.target.value.match(REGEXP);
 
     if (!digits?.length) {
-      setPhone(MASK)
+      setPhone('')
       return
     }
 
-    let lastIndex = 0
     let digitIndex = 0
 
-    let result = MASK.replaceAll(MASK_PLUG, (plug, index) => {
+    let result = MASK.replaceAll(MASK_PLUG, (plug) => {
       if (digits[digitIndex]) {
-        lastIndex = index
         return digits[digitIndex++]
       }
 
@@ -42,6 +45,18 @@ export const Form = () => {
     })
 
     setPhone(result)
+  }
+
+  function handlePhoneFocus() {
+    if (!phone) {
+      setPhone(MASK)
+    }
+  }
+
+  function handlePhoneBlur() {
+    if (phone === MASK) {
+      setPhone('')
+    }
   }
 
   function updateName(evt: ChangeEvent<HTMLInputElement>) {
@@ -52,14 +67,12 @@ export const Form = () => {
     evt.preventDefault()
 
     if (phone.length < MASK.length || !name.length) {
-      // TODO: validation error msg
       return
     }
 
     setLoading(true)
 
     try {
-      // TODO: modal for success/error
       const formData = new FormData(evt.currentTarget)
       const response = await fetch('/api/order', {
         method: 'POST',
@@ -84,10 +97,36 @@ export const Form = () => {
   }
 
   return (
-    <form action="/api/order" encType="multipart/form-data" method="POST" onSubmit={handleSubmit}>
-      <Input type="text" name="phone" label="Телефон" value={phone} onChange={updatePhone} ref={phoneRef} required/>
-      <Input type="text" name="name" label="Ваше имя" placeholder="Введите имя" value={name} onChange={updateName} />
-      <Button tag="button" type="submit" disabled={loading}>Записаться на занятие</Button>
+    <form action="/api/order" encType="multipart/form-data" method="POST" onSubmit={handleSubmit} className={styles.form}>
+      <label className={styles.wrap}>
+        <span className={styles.label}>
+          Телефон <span className={styles.asterisk}>*</span>
+        </span>
+        <input
+          value={phone}
+          onChange={updatePhone}
+          onFocus={handlePhoneFocus}
+          onBlur={handlePhoneBlur}
+          ref={phoneRef}
+          className={styles.input}
+          placeholder={MASK}
+          type="text"
+          name="phone"
+          required
+        />
+      </label>
+      <label className={styles.wrap}>
+        <span className={styles.label}>Ваше имя</span>
+        <input
+          value={name}
+          onChange={updateName}
+          className={styles.input}
+          type="text"
+          name="name"
+          placeholder="Введите имя"
+          />
+      </label>
+      <Button tag="button" type="submit" disabled={loading} className={styles.submit}>Записаться на занятие</Button>
     </form>
   )
 }

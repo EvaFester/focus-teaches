@@ -1,5 +1,8 @@
 :root {
   --accent: rgb(255, 0, 204);
+  --accent-disabled: #b1b1b1;
+
+  --attention: rgb(169, 0, 0);
 
   --text-base: #333333;
   --text-secondary: #555555;

@@ -15,7 +15,7 @@
     "cta": "Пробный урок бесплатно"
   },
   "hero": {
-    "img":  {
+    "img": {
       "url": "https://images.unsplash.com/photo-1623091034795-46701649f6e9?q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "alt": "Дети катаются на роликах"
     },
@@ -68,9 +68,10 @@
       "text": "Можно перенести на удобное время"
     }
   ],
+
   "profile": {
     "img": {
-      "id": "profile",
+      "src": "/img/profile/profile.png",
       "alt": "Тренер Сергей Фокин"
     },
     "quote": "Я не могу назвать это работой. Ролики - моя жизнь",
@@ -82,8 +83,7 @@
   "gallery": {
     "title": "Как проходят занятия",
     "subtitle": "Тренировки на свежем воздухе в группах и индивидуально с тренером",
-    "items": [
-      {
+    "items": [{
         "type": "video",
         "url": "https://www.youtube.com/watch?v=tybOi4hjZFQ",
         "preview": "https://placehold.co/600x600"
@@ -95,12 +95,14 @@
     ]
   },
   "catalog": {
-    "title": "Занятия на роликах для детей",
+    "title": "Занятия на роликах для детей и взрослых",
     "subtitle": "Обучение роликовым конькам с нуля и до профессионального уровня",
-    "items": [
-      {
+    "items": [{
         "active": true,
-        "img": "https://placehold.co/600x600",
+        "img": {
+          "url": "https://media.istockphoto.com/id/944864968/photo/boy-in-rollerblades-standing-with-friends-outdoors.jpg?s=1024x1024&w=is&k=20&c=ViwN-XXflfYQexQQ020hhupQcmYhEtZ7zWAsdHbzPNc=",
+          "alt": "Дети на роликах"
+        },
         "title": "Индивидуальное занятие",
         "text": [
           "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
@@ -112,15 +114,32 @@
         }
       },
       {
+        "active": true,
+        "img": {
+          "url": "https://media.istockphoto.com/id/1365417950/photo/smiling-friends-having-fun-roller-skating-in-the-park.jpg?s=1024x1024&w=is&k=20&c=uGo2te6g4YXrBjkb_BOYxyQ7KxBkopWhIDCcqM_0oso=",
+          "alt": "Дети на роликах"
+        },
+        "title": "Ещё одни групповые занятия",
+        "text": [
+          "За одно занятие можно познакомиться для себя новые элементы и техники и катания"
+        ],
+        "price": {
+          "main": "3'000 ₽"
+        }
+      },
+      {
         "active": false,
-        "img": "https://placehold.co/600x600",
+        "img": {
+          "url": "https://media.istockphoto.com/id/1365417946/photo/happy-woman-and-man-having-fun-on-roller-skates.jpg?s=1024x1024&w=is&k=20&c=JoU_OgiZRmiHfKS2K486p14gXTdrlM_nw_uL3Z3sbao=",
+          "alt": "Дети на роликах"
+        },
         "title": "Групповые занятия",
         "text": [
           "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
           "Продолжительность - 90 мин"
         ],
         "price": {
-          "main": "3'000 ₽"
+          "main": "4'000 ₽"
         }
       }
     ],
@@ -155,43 +174,45 @@
   "contact": {
     "title": "Контакты роллер школы",
     "subtitle": "Можно оставить заявку в специальной форме или связаться с нами по телефону или в соц.сетях",
-    "items": [
-      {
-        "img": "https://placehold.co/200x200",
+    "items": [{
+        "img": "/contact_hours.png",
         "title": "На связи ежедневно",
         "subtitle": "c 10:00 до 21:00"
       },
       {
-        "img": "https://placehold.co/200x200",
+        "img": "/contact_phone.png",
         "title": "Телефон школы",
         "subtitle": "+7 (915) 125-25-26",
         "url": "tel:+79151252526"
       },
       {
-        "img": "https://placehold.co/200x200",
+        "img": "/contact_email.png",
         "title": "Наша почта",
         "subtitle": "info@focusmail.ru",
         "url": "mailto:info@focusmail.ru"
       }
     ],
     "social": {
-      "subtitle": "Социальные сети",
-      "items": [
-        {
-          "img": "https://placehold.co/100x100",
-          "url": "vk.com"
+      "title": "Социальные сети",
+      "items": [{
+          "img": "/vk.svg",
+          "url": "https://vk.com",
+          "color": "#4c75a3"
         },
         {
-          "img": "https://placehold.co/100x100",
-          "url": "whatsapp.com"
+          "img": "/whatsapp.svg",
+          "url": "https://whatsapp.com",
+          "color": "#25d366"
         },
         {
-          "img": "https://placehold.co/100x100",
-          "url": "vk.ru"
+          "img": "/vk.svg",
+          "url": "https://vk.ru",
+          "color": "#a52a2a"
         },
         {
-          "img": "https://placehold.co/100x100",
-          "url": "whatsapp.ru"
+          "img": "/telegram.svg",
+          "url": "https://telegram.org",
+          "color": "#ffe633"
         }
       ]
     }
