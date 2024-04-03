@@ -2,10 +2,11 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import 'swiper/components/navigation/navigation.min.css';
-import 'swiper/components/pagination/pagination.min.css';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { useDataContext } from "@/contexts";
 import { Text } from '../../components';
 import styles from './index.module.css';
