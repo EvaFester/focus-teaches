@@ -1,0 +1,34 @@
+.wrap {
+  padding: 2em;
+}
+
+@media(min-width: 600px) {
+  .wrap {
+    padding: 4em;
+  }
+}
+
+.heading {
+  margin-bottom: 2em;
+}
+
+.list {
+  display: grid;
+  grid-gap: 2em;
+  margin: -1em;
+  padding: 1em;
+  list-style: none;
+}
+
+@media(min-width: 900px) {
+  .list {
+    grid-gap: 3em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

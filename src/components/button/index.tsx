@@ -16,8 +16,19 @@ export type ButtonProps = {
 
 export const Button: FC<ButtonProps> = ({ className, tag, type, href, target, rel, children, disabled, onClick }) => {
   if (tag === 'a') {
-    return <a className={cn(styles.button, className)} href={href} target={target} rel={rel} onClick={onClick}>{children}</a>
+    return <a
+      className={cn(styles.button, { [styles.disabled]: disabled }, className)}
+      href={href}
+      target={target}
+      rel={rel}
+      onClick={onClick}
+    >{children}</a>
   }
 
-  return <button className={cn(styles.button, className)} type={type} onClick={onClick} disabled={disabled}>{children}</button>
+  return <button
+    className={cn(styles.button, { [styles.disabled]: disabled }, className)}
+    type={type}
+    onClick={onClick}
+    disabled={disabled}
+  >{children}</button>
 }

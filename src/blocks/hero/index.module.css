@@ -67,7 +67,6 @@
 
 @media(min-width: 600px) {
   .cta {
-    padding: 0.5em 1em;
     max-width: max-content;
     margin: 0 auto;
   }

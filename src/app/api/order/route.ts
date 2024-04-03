@@ -1,4 +1,6 @@
 import { getTgService } from "@/lib/messenger"
+import { getSpreadsheet } from "@/lib/spreadsheet"
+import { getConfig } from '@/lib/config'
 import { orderSchema } from "@/dto/order.dto"
 import { NextResponse } from "next/server"
 
@@ -10,10 +12,18 @@ export async function POST(req: Request) {
 
     await getTgService().send(`
 
-    <b>new order:</b>
-    name: ${order.name}
-    phone: ${order.phone}
+<b>new order:</b>
+name: ${order.name}
+phone: ${order.phone}
     `)
+
+    // no need to await
+    getSpreadsheet().insert([
+      order.name,
+      // hack to avoid google spreadsheet formulas
+      ' ' + order.phone,
+      new Date().toLocaleString('ru-RU', { timeZone: getConfig().TIMEZONE }),
+    ])
 
     console.log('Order success', order);
 
