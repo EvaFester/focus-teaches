@@ -1,10 +1,14 @@
 "use client"
-
+import { FC } from "react"
 import { Heading, Offer } from "@/components"
 import { useDataContext } from "@/contexts"
 import styles from './index.module.css'
 
-export const Catalog = () => {
+export type CatalogProps = {
+  type: 'children' | 'adults';
+}
+
+export const Catalog: FC<CatalogProps> = ({ type }) => {
   const data = useDataContext()
 
   if (!data) {
@@ -12,10 +16,14 @@ export const Catalog = () => {
   }
 
   return (
-    <section className={styles.wrap}>
-      <Heading title={data.catalog.title} subtitle={data.catalog.subtitle} className={styles.heading}/>
+    <section className={styles.wrap} id={data.catalog[type].anchor.slice(1)}>
+      <Heading
+        title={data.catalog[type].title}
+        subtitle={data.catalog[type].subtitle}
+        className={styles.heading}
+      />
       <ul className={styles.list}>
-        {data.catalog.items.map((item) => (
+        {data.catalog[type].items.map((item) => (
           <li key={item.title} className={styles.item}>
             <Offer
               {...item}

@@ -9,7 +9,8 @@ export default function Home() {
         <Hero />
         <Features/>
         <Profile />
-        <Catalog />
+        <Catalog type="children"/>
+        <Catalog type="adults"/>
         <Form />
         <Contact />
       </main>

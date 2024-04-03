@@ -19,12 +19,12 @@ export const Header = () => {
       </a>
       <ul className={styles.menu}>
         <li>
-          <a href='' className={styles.menuLink}>
+          <a href={data.catalog.children.anchor} className={styles.menuLink}>
             <Text tag='span'>{data.header.menu.children}</Text>
           </a>
         </li>
         <li>
-          <a href='' className={styles.menuLink}>
+          <a href={data.catalog.adults.anchor} className={styles.menuLink}>
             <Text tag='span'>{data.header.menu.adults}</Text>
           </a>
         </li>

@@ -95,54 +95,108 @@
     ]
   },
   "catalog": {
-    "title": "Занятия на роликах для детей и взрослых",
-    "subtitle": "Обучение роликовым конькам с нуля и до профессионального уровня",
-    "items": [{
-        "active": true,
-        "img": {
-          "url": "https://media.istockphoto.com/id/944864968/photo/boy-in-rollerblades-standing-with-friends-outdoors.jpg?s=1024x1024&w=is&k=20&c=ViwN-XXflfYQexQQ020hhupQcmYhEtZ7zWAsdHbzPNc=",
-          "alt": "Дети на роликах"
+    "children": {
+      "title": "Занятия на роликах для детей",
+      "subtitle": "Обучение роликовым конькам с нуля и до профессионального уровня",
+      "anchor": "#children",
+      "items": [{
+          "active": true,
+          "img": {
+            "url": "https://media.istockphoto.com/id/944864968/photo/boy-in-rollerblades-standing-with-friends-outdoors.jpg?s=1024x1024&w=is&k=20&c=ViwN-XXflfYQexQQ020hhupQcmYhEtZ7zWAsdHbzPNc=",
+            "alt": "Дети на роликах"
+          },
+          "title": "Индивидуальное занятие",
+          "text": [
+            "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
+            "Продолжительность - 90 мин"
+          ],
+          "price": {
+            "main": "5'200 ₽",
+            "old": "7'200 ₽"
+          }
         },
-        "title": "Индивидуальное занятие",
-        "text": [
-          "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
-          "Продолжительность - 90 мин"
-        ],
-        "price": {
-          "main": "5'200 ₽",
-          "old": "7'200 ₽"
-        }
-      },
-      {
-        "active": true,
-        "img": {
-          "url": "https://media.istockphoto.com/id/1365417950/photo/smiling-friends-having-fun-roller-skating-in-the-park.jpg?s=1024x1024&w=is&k=20&c=uGo2te6g4YXrBjkb_BOYxyQ7KxBkopWhIDCcqM_0oso=",
-          "alt": "Дети на роликах"
+        {
+          "active": true,
+          "img": {
+            "url": "https://media.istockphoto.com/id/1365417950/photo/smiling-friends-having-fun-roller-skating-in-the-park.jpg?s=1024x1024&w=is&k=20&c=uGo2te6g4YXrBjkb_BOYxyQ7KxBkopWhIDCcqM_0oso=",
+            "alt": "Дети на роликах"
+          },
+          "title": "Ещё одни групповые занятия",
+          "text": [
+            "За одно занятие можно познакомиться для себя новые элементы и техники и катания"
+          ],
+          "price": {
+            "main": "3'000 ₽"
+          }
         },
-        "title": "Ещё одни групповые занятия",
-        "text": [
-          "За одно занятие можно познакомиться для себя новые элементы и техники и катания"
-        ],
-        "price": {
-          "main": "3'000 ₽"
+        {
+          "active": false,
+          "img": {
+            "url": "https://media.istockphoto.com/id/1365417946/photo/happy-woman-and-man-having-fun-on-roller-skates.jpg?s=1024x1024&w=is&k=20&c=JoU_OgiZRmiHfKS2K486p14gXTdrlM_nw_uL3Z3sbao=",
+            "alt": "Дети на роликах"
+          },
+          "title": "Групповые занятия",
+          "text": [
+            "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
+            "Продолжительность - 90 мин"
+          ],
+          "price": {
+            "main": "4'000 ₽"
+          }
         }
-      },
-      {
-        "active": false,
-        "img": {
-          "url": "https://media.istockphoto.com/id/1365417946/photo/happy-woman-and-man-having-fun-on-roller-skates.jpg?s=1024x1024&w=is&k=20&c=JoU_OgiZRmiHfKS2K486p14gXTdrlM_nw_uL3Z3sbao=",
-          "alt": "Дети на роликах"
+      ]
+    },
+    "adults": {
+      "title": "Занятия на роликах для взрослых",
+      "subtitle": "Обучение роликовым конькам и жизни",
+      "anchor": "#adults",
+      "items": [{
+          "active": true,
+          "img": {
+            "url": "https://media.istockphoto.com/id/944864968/photo/boy-in-rollerblades-standing-with-friends-outdoors.jpg?s=1024x1024&w=is&k=20&c=ViwN-XXflfYQexQQ020hhupQcmYhEtZ7zWAsdHbzPNc=",
+            "alt": "Взрослые на роликах"
+          },
+          "title": "Индивидуальное занятие",
+          "text": [
+            "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
+            "Продолжительность - 90 мин"
+          ],
+          "price": {
+            "main": "5'200 ₽",
+            "old": "7'200 ₽"
+          }
         },
-        "title": "Групповые занятия",
-        "text": [
-          "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
-          "Продолжительность - 90 мин"
-        ],
-        "price": {
-          "main": "4'000 ₽"
+        {
+          "active": true,
+          "img": {
+            "url": "https://media.istockphoto.com/id/1365417950/photo/smiling-friends-having-fun-roller-skating-in-the-park.jpg?s=1024x1024&w=is&k=20&c=uGo2te6g4YXrBjkb_BOYxyQ7KxBkopWhIDCcqM_0oso=",
+            "alt": "Взрослые на роликах"
+          },
+          "title": "Ещё одни групповые занятия",
+          "text": [
+            "За одно занятие можно познакомиться для себя новые элементы и техники и катания"
+          ],
+          "price": {
+            "main": "3'000 ₽"
+          }
+        },
+        {
+          "active": false,
+          "img": {
+            "url": "https://media.istockphoto.com/id/1365417946/photo/happy-woman-and-man-having-fun-on-roller-skates.jpg?s=1024x1024&w=is&k=20&c=JoU_OgiZRmiHfKS2K486p14gXTdrlM_nw_uL3Z3sbao=",
+            "alt": "Взрослые на роликах"
+          },
+          "title": "Групповые занятия",
+          "text": [
+            "За одно занятие можно познакомиться с роликами и научиться стоять на них. Более опытные дети откроют для себя новые элементы и техники катания",
+            "Продолжительность - 90 мин"
+          ],
+          "price": {
+            "main": "4'000 ₽"
+          }
         }
-      }
-    ],
+      ]
+    },
     "activeCta": "Записаться на занятие",
     "inactiveCta": "Группа набрана"
   },
