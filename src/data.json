@@ -26,11 +26,49 @@
     ],
     "cta": "Записаться на пробный урок"
   },
-  "features": [{
-    "img": "https://placehold.co/42x42",
-    "title": "Занятия не сгорают",
-    "text": "Можно перенести на удобное время"
-  }],
+  "features": [
+    {
+      "img": {
+        "src": "/img/features/slide-icon.png",
+        "alt": "/"
+      },
+      "title": "Занятия не сгорают",
+      "text": "Можно перенести на удобное время"
+    },
+    {
+      "img": {
+        "src": "/img/features/slide-icon.png",
+        "alt": "/"
+      },
+      "title": "Занятия не сгорают",
+      "text": "Можно перенести на удобное время"
+    },
+    {
+      "img": {
+        "src": "/img/features/slide-icon.png",
+        "alt": "/"
+      },
+      "title": "Занятия не сгорают",
+      "text": "Можно перенести на удобное время"
+    },
+    {
+      "img": {
+        "src": "/img/features/slide-icon.png",
+        "alt": "/"
+      },
+      "title": "Занятия не сгорают",
+      "text": "Можно перенести на удобное время"
+    },
+    {
+      "img": {
+        "src": "/img/features/slide-icon.png",
+        "alt": "/"
+      },
+      "title": "Занятия не сгорают",
+      "text": "Можно перенести на удобное время"
+    }
+  ],
+
   "profile": {
     "img": {
       "src": "/img/profile/profile.png",
