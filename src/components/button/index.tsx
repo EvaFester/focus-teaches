@@ -1,6 +1,7 @@
-import { FC, MouseEventHandler, ReactNode } from 'react'
+import { FC, MouseEventHandler, MouseEvent, ReactNode } from 'react'
 import cn from 'classnames'
 import styles from './index.module.css'
+import { getAnchorClickHandler } from '@/utils';
 
 export type ButtonProps = {
   tag: 'button' | 'a';
@@ -15,13 +16,22 @@ export type ButtonProps = {
 }
 
 export const Button: FC<ButtonProps> = ({ className, tag, type, href, target, rel, children, disabled, onClick }) => {
+
+  function handleAnchorClick(evt: MouseEvent<HTMLAnchorElement>) {
+    if (href) {
+      getAnchorClickHandler(href)(evt)
+    }
+
+    onClick?.(evt)
+  }
+
   if (tag === 'a') {
     return <a
       className={cn(styles.button, { [styles.disabled]: disabled }, className)}
       href={href}
       target={target}
       rel={rel}
-      onClick={onClick}
+      onClick={handleAnchorClick}
     >{children}</a>
   }
 
