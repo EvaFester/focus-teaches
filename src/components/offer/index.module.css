@@ -1,0 +1,71 @@
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+  border-radius: 0.2em;
+  box-shadow: -0.1em 0.1em 0.5em 0 var(--text-secondary-invert);
+  overflow: hidden;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.inactive {
+  filter: grayscale(1);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  height: 100%;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-weight: normal;
+}
+
+.textWrap {
+  margin-bottom: 2em;
+}
+
+.text {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+.priceWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: auto 0 2em 0;
+}
+
+.priceOld {
+  margin-right: 1em;
+  font-size: 1.4rem;
+}
+
+.priceMain {
+  font-size: 1.8rem;
+}
+
+.priceOld + .priceMain {
+  color: var(--attention);
+  font-weight: 500;
+}
+
+.cta {
+  display: block;
+}

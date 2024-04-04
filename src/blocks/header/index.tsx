@@ -3,6 +3,7 @@
 import { useDataContext } from "@/contexts"
 import { Text, Button } from '../../components'
 import styles from './index.module.css'
+import { getAnchorClickHandler } from "@/utils"
 
 export const Header = () => {
   const data = useDataContext()
@@ -19,12 +20,20 @@ export const Header = () => {
       </a>
       <ul className={styles.menu}>
         <li>
-          <a href='' className={styles.menuLink}>
+          <a
+            href={data.catalog.children.anchor}
+            className={styles.menuLink}
+            onClick={getAnchorClickHandler(data.catalog.children.anchor)}
+          >
             <Text tag='span'>{data.header.menu.children}</Text>
           </a>
         </li>
         <li>
-          <a href='' className={styles.menuLink}>
+          <a
+            href={data.catalog.adults.anchor}
+            className={styles.menuLink}
+            onClick={getAnchorClickHandler(data.catalog.adults.anchor)}
+          >
             <Text tag='span'>{data.header.menu.adults}</Text>
           </a>
         </li>

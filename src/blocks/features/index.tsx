@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
-import 'swiper/components/navigation/navigation.min.css';
-import 'swiper/components/pagination/pagination.min.css';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { useDataContext } from "@/contexts";
-import Image from 'next/image';
 import { Text } from '../../components';
 import styles from './index.module.css';
 
@@ -15,7 +15,7 @@ SwiperCore.use([Navigation, Pagination]);
 
 interface Feature {
     img: {
-        id: string;
+        src: string;
         alt: string;
     };
     title: string;
@@ -25,7 +25,7 @@ interface Feature {
 function SlideCard({ feature }: { feature: Feature }) {
     return (
         <div className={styles.slideContent}>
-             <Image className={styles.image} src={`/img/features/${feature.img.id}.svg`} alt={feature.img.alt} width="122" height="122" />
+             <img className={styles.image} src={feature.img.src} alt={feature.img.alt} width="122" height="122" />
             <div>
                 <Text className={styles.title} tag='h2'>{feature.title}</Text>
                 <Text className={styles.text} tag='span'>{feature.text}</Text>
@@ -47,6 +47,7 @@ const InitSlider: React.FC = () => {
         <Swiper className={styles.list}
             slidesPerView={1}
             slidesPerGroup={1}
+            loop={true}
             navigation={{
                 prevEl: '.buttonPrev',
                 nextEl: '.buttonNext',
@@ -60,12 +61,12 @@ const InitSlider: React.FC = () => {
             }}
             breakpoints={{
 
-                1900:{
+                1024:{
                     slidesPerView: 3,
-                    spaceBetween: 50,
+                    spaceBetween: 10,
                 },
 
-                1200: {
+                768: {
                     slidesPerView: 2,
                     spaceBetween: 10,
                 },
@@ -81,12 +82,6 @@ const InitSlider: React.FC = () => {
 };
 
 export const Features = () => {
-    const data = useDataContext();
-
-    if (!data) {
-        return null;
-    }
-
     return (
         <section className={styles.features}>
             <button className={`buttonPrev ${styles.button} ${styles.buttonPrev}`}></button>

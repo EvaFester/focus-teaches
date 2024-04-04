@@ -1,6 +1,6 @@
 
 .features{
-    padding: 0 1em;
+    padding: 2em 1em;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     row-gap: 3em;
@@ -21,31 +21,13 @@
 
 .slideContent{
     display: flex;
-    padding: 20px 0 20px 20px;
+    padding: 20px 20px 20px 20px;
     gap: 3em;
-}
-
-
-@media (max-width: 600px){
-    .slideContent{
-        padding: 3px;
-        flex-direction: column-reverse;
-        align-items:center;
-        gap: 1em;
-        text-align: center;
-    }
-}
-
-@media (min-width: 1200px){
-    .slideContent{
-        padding: 10px 0 10px 10px;
-        gap: 1.5em;
-    }
 }
 
 .customPagination{
     grid-column: span 3;
-    margin: 0 auto;
+   justify-content: center;
     display: flex;
     gap: 45px;
 }
@@ -82,11 +64,40 @@
 }
 
 .title {
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 400;
     color: var(--text-base);
 }
+
 .text{
-    font-size: 1.9rem ;
+    font-size: 1.2rem ;
     color: var(--text-secondary)
+}
+
+@media (max-width: 1440px){
+
+    .slideContent{
+        gap: 1em;
+        padding: 10px;
+    }
+
+    .image{
+        width: 80px;
+        height: 80px;
+        align-self: center;
+    }
+
+    .title {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 600px){
+    .slideContent{
+        padding: 3px;
+        flex-direction: column-reverse;
+        align-items:center;
+        gap: 1em;
+        text-align: center;
+    }
 }

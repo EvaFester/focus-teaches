@@ -1,42 +1,38 @@
 .profile{
     padding: 0 2em;
-    position:relative;
+    display: grid;
+    row-gap: 1em;
+}
+
+.wrapper{
     display: flex;
     flex-direction: column;
-    gap: 3.75em;
+    align-self: center;
+    gap: 3em;
 }
 
 .blockquote{
-    margin:0;
-    margin-top:185px;
+    margin: 0;
 }
 
 .quote{
-    font-size: 3rem;
+    font-size: 2.4rem;
     margin-bottom: 17px;
 }
 
 .cite{
-    font-size: 2.25rem;
+    font-size: 1.2rem;
     font-style: normal;
 }
 
+
 .description{
     color: var(--text-secondary);
-    font-size: 2.25rem;
+    font-size: 1.2rem;
     grid-column-start: 1;
 }
 
-.image{
-    position:absolute;
-    z-index: -1;
-    right: 0;
-    top:0;
-}
-
 .button{
-    grid-column: span 2;
-    margin: 0 auto;
     width: fit-content;
     min-height: 76px;
     background-color: transparent;
@@ -45,8 +41,8 @@
     padding-left: 98px;
     position: relative;
     display:flex;
-    align-items:center;
-    margin-bottom: 108px;
+    align-items: center;
+    margin-left: auto;
 }
 
 .button::before{
@@ -55,7 +51,49 @@
     height: 76px;
     width: 76px;
     left:0;
-    top:0;
+    top:50%;
+    transform: translateY(-50%);
     background: url("/profile-play.svg");
 
+}
+
+.image{
+    width: 100%;
+    height: auto;
+    grid-column: 2;
+    grid-row: span 2;
+    align-self:center;
+}
+
+@media (max-width: 768px){
+
+    .profile{
+        gap: 2em;
+    }
+
+    .quote{
+        font-size: 1.6rem;
+    }
+
+    .image{
+        grid-column: 1;
+        grid-row: 2;
+        margin:0 auto;
+    }
+
+    .button{
+        margin: 0 auto;
+        grid-row: 3;
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 1024px){
+    .cite{
+        font-size: 1.5rem;
+    }
+
+    .description{
+        font-size: 1.5rem;
+    }
 }

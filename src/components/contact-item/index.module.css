@@ -1,0 +1,26 @@
+.wrap {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.7em 1em;
+  justify-content: start;
+  align-content: center;
+}
+
+.icon {
+  grid-row: 1 / span 2;
+  width: 3em;
+  height: 6em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.title {
+  align-self: end;
+}
+
+.subtitle {
+  align-self: start;
+  text-decoration: none;
+  color: var(--text-base);
+}

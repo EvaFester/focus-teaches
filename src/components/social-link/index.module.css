@@ -1,0 +1,10 @@
+.link {
+  display: block;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+}
