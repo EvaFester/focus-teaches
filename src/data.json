@@ -85,12 +85,18 @@
     "subtitle": "Тренировки на свежем воздухе в группах и индивидуально с тренером",
     "items": [{
         "type": "video",
-        "url": "https://www.youtube.com/watch?v=tybOi4hjZFQ",
-        "preview": "https://placehold.co/600x600"
+        "url": "https://www.youtube.com/embed/BNyH4dw1B_s?si=T6_DVFtTdvJGpLPK",
+        "thumbnail": "https://placehold.co/600x600"
       },
       {
-        "type": "image",
-        "url": "https://placehold.co/600x600"
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=BNyH4dw1B_s",
+        "thumbnail": "https://placehold.co/600x600"
+      },
+      {
+        "type": "video",
+        "url": "https://www.youtube.com/embed/vMKtE1KLkjc?si=7YtQKYC3uH2SIH-6",
+        "thumbnail": "https://placehold.co/600x600"
       }
     ]
   },
