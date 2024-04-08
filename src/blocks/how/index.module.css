@@ -1,5 +1,14 @@
 .how{
-    padding: 4em;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.wrapper{
+ display:flex;
+ flex-direction: column;
+ gap: 1em;
 }
 
 .video{
@@ -9,4 +18,42 @@
 
 .list{
     width: 100%;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-base);
+}
+
+.subtitle{
+    font-size: 1.2rem ;
+    color: var(--text-secondary)
+}
+
+.thumbnail{
+    width:100%;
+}
+
+.img{
+    width:100%;
+}
+
+@media (max-width: 1440px){
+
+    .title {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 1020px){
+    .video{
+        height: 450px;
+    }
+}
+
+@media (max-width: 600px){
+    .video{
+        height: 230px;
+    }
 }

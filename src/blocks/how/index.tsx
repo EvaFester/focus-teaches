@@ -68,8 +68,8 @@ export const How = () => {
     return (
         <section className={styles.how}>
             <Text className={styles.title} tag='h2'>{data.gallery.title}</Text>
-            <Text className={styles.text} tag='span'>{data.gallery.subtitle}</Text>
-            <div>
+            <Text className={styles.subtitle} tag='span'>{data.gallery.subtitle}</Text>
+            <div className={styles.wrapper}>
                 {/* Основной iframe для видео */}
                 <iframe className={styles.video}
                     src={`https://www.youtube.com/embed/${getYoutubeVideoId(videoUrl)}`} // Используем полученный идентификатор в URL
@@ -79,11 +79,15 @@ export const How = () => {
                 ></iframe>
 
                 {/* Swiper для пагинации с превью */}
-                <Swiper pagination slidesPerView={6} className={styles.list}>
+                <Swiper pagination
+                    slidesPerView={6}
+                    className={styles.list}
+                    spaceBetween={2}>
+
                     {thumbnails.map((thumbnail, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide className={styles.thumbnail} key={index}>
                             {/* При клике на миниатюру меняется URL видео */}
-                            <img
+                            <img className={styles.img}
                                 src={thumbnail}
                                 alt={`Превью видео ${index + 1}`}
                                 onClick={() => setVideoUrl(videos[index].url)}
