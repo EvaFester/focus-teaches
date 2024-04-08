@@ -74,8 +74,6 @@ export const How = () => {
                 <iframe className={styles.video}
                     src={`https://www.youtube.com/embed/${getYoutubeVideoId(videoUrl)}`} // Используем полученный идентификатор в URL
                     title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
                 ></iframe>
 
                 {/* Swiper для пагинации с превью */}
