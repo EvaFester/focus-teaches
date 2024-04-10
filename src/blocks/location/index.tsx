@@ -16,9 +16,9 @@ export const Location = () => {
 
   const { map } = data;
 
-  const queryString = data.map.places.map(place => place.searchQuery).join(",");
-  const encodedQueryString = encodeURIComponent(queryString);
-  const embedUrl = `https://www.google.com/maps/embed/v1/search?key=${apiKey}&q=${encodedQueryString}`;
+  // TODO: works only for 5 places max (why?)
+  const encodedQueryString = encodeURIComponent(map.places.join(","));
+  const embedUrl = `https://www.google.com/maps/embed/v1/search?key=${apiKey}&q=${encodedQueryString}&zoom=${map.zoom}`;
 
   return (
     <section className={styles.location}>
@@ -27,7 +27,7 @@ export const Location = () => {
         <Text className={styles.subtitle} tag='span'>{map.subtitle}</Text>
       </div>
       <div className={styles.mapContainer}>
-        <iframe className={styles.map} src={embedUrl} width="640" height="480"></iframe>
+        <iframe className={styles.map} src={embedUrl} width="640" height="480" loading="lazy"></iframe>
       </div>
     </section>
   );

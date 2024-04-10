@@ -6,14 +6,22 @@
 }
 
 .map{
+    display: block;
     width: 100%;
     height: 100%;
-    background-color: #525252;
+    background-color: var(--text-secondary);
+    border: none;
 }
 
 .mapContainer{
     width: 100vw;
-    height: 80vw;
+    height: 80vh;
+}
+
+@media(min-width: 900px) {
+  .mapContainer {
+    height: 90vh;
+  }
 }
 
 .text{

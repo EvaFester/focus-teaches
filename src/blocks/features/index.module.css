@@ -14,7 +14,7 @@
 .slide{
     width: fit-content;
     margin-right: 0;
-    border: 2px solid #525252;
+    border: 2px solid var(--text-secondary);
     border-radius: 5px;
 }
 
@@ -35,7 +35,7 @@
 .customBullet{
     width: 20px;
     height: 20px;
-    background-color: #525252;
+    background-color: var(--text-secondary);
 }
 
 .button{
@@ -43,7 +43,7 @@
     height: 45px;
     border:none;
     color: transparent;
-    background:#525252;
+    background: var(--text-secondary);
 }
 
 .button:hover{
