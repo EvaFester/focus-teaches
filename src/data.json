@@ -203,16 +203,32 @@
   "map": {
     "title": "Карта занятий в парках и набережных москвы",
     "subtitle": "Обустроенные парки Горького, Лужники, Фили и набережные Строгино, Гребной канал",
-    "locations": [
-      [55.731256, 37.603145],
-      [55.715752, 37.554459],
-      [55.755534, 37.551313],
-      [55.747834, 37.483795],
-      [55.764730, 37.440569],
-      [55.804121, 37.401216]
-    ],
-    "center": [55.7528488147893,37.62321311084745],
-    "zoom": 11
+    "places": [
+      {
+        "name": "Filyovsky Park District, Moscow, Russia",
+        "searchQuery": "PFXM+FM Filyovsky Park District, Moscow, Russia"
+      },
+      {
+        "name": "Khamovniki District, Moscow, Russia",
+        "searchQuery": "PHC6+92 Khamovniki District, Moscow, Russia"
+      },
+      {
+        "name": "Krylatskoye District, Moscow, Russia",
+        "searchQuery": "QC3R+QC Krylatskoye District, Moscow, Russia"
+      },
+      {
+        "name": "Yakimanka District, Moscow, Russia",
+        "searchQuery": "PJJ3+HC Yakimanka District, Moscow, Russia"
+      },
+      {
+        "name": "Strogino District, Moscow, Russia",
+        "searchQuery": "RC32+JFW Strogino District, Moscow, Russia"
+      },
+      {
+        "name": "Presnensky District, Moscow, Russia",
+        "searchQuery": "QH42+6G8 Presnensky District, Moscow, Russia"
+      }
+    ]
   },
   "form": {
     "title": "Записаться на занятие на роликах",
