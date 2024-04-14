@@ -1,0 +1,55 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  padding: 2em;
+  z-index: 100;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.modalActive .backdrop {
+  opacity: 1;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.content {
+  position: relative;
+  padding: 2em;
+  background-color: var(--background-base);
+  border-radius: 0.4em;
+  text-align: center;
+  opacity: 0.5;
+  transform: scale(0.7);
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+@media (min-width: 600px) {
+  .content {
+    padding: 2em 3em;
+  }
+}
+
+.modalActive .content {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.text {
+  margin-bottom: 2em;
+}

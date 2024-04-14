@@ -5,27 +5,36 @@ import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react"
 
 import styles from './index.module.css'
 import { Button } from '../button'
+import { Modal } from './components/modal'
+import { useDataContext } from '@/contexts'
 
-const MASK = '+7 (___) ___-__-__'
-const MASK_PLUG = '_'
 const REGEXP = /\d/g
 
 // TODO: validation error msg
-// TODO: success/error modal
 // TODO: allow one extra character for phone number
 export const Form = () => {
+  const data = useDataContext()
   const [loading, setLoading] = useState(false)
   const [phone, setPhone] = useState('')
   const [name, setName] = useState('')
   const phoneRef = useRef<HTMLInputElement>(null)
+  const [showModal, setShowModal] = useState(false)
+  const [isError, setIsError] = useState(false)
 
   useEffect(() => {
     const index = phone.split('').findLastIndex((char) => REGEXP.test(char)) + 1
     phoneRef.current?.setSelectionRange(index, index)
   }, [phoneRef, phone])
 
+  if (!data) {
+    return null
+  }
+  const mask = data.form.phone.mask
+  const maskPlug = data.form.phone.mask_plug
+  const modalData = isError ? data.form.modal.error : data.form.modal.success
+
   function updatePhone(evt: ChangeEvent<HTMLInputElement>) {
-    const digits = evt.target.value.startsWith(MASK[0])
+    const digits = evt.target.value.startsWith(mask[0])
       ? evt.target.value.match(REGEXP)?.slice(1)
       : evt.target.value.match(REGEXP);
 
@@ -36,7 +45,7 @@ export const Form = () => {
 
     let digitIndex = 0
 
-    let result = MASK.replaceAll(MASK_PLUG, (plug) => {
+    let result = mask.replaceAll(maskPlug, (plug) => {
       if (digits[digitIndex]) {
         return digits[digitIndex++]
       }
@@ -49,12 +58,12 @@ export const Form = () => {
 
   function handlePhoneFocus() {
     if (!phone) {
-      setPhone(MASK)
+      setPhone(mask)
     }
   }
 
   function handlePhoneBlur() {
-    if (phone === MASK) {
+    if (phone === mask) {
       setPhone('')
     }
   }
@@ -91,16 +100,24 @@ export const Form = () => {
 
       setPhone(MASK)
       setName('')
+      setShowModal(true)
+      setIsError(false)
     } catch {
+      setShowModal(true)
+      setIsError(true)
     }
     setLoading(false)
+  }
+
+  function handleModalClose() {
+    setShowModal(false)
   }
 
   return (
     <form action="/api/order" encType="multipart/form-data" method="POST" onSubmit={handleSubmit} className={styles.form}>
       <label className={styles.wrap}>
         <span className={styles.label}>
-          Телефон <span className={styles.asterisk}>*</span>
+          {data.form.phone.label} <span className={styles.asterisk}>*</span>
         </span>
         <input
           value={phone}
@@ -109,24 +126,30 @@ export const Form = () => {
           onBlur={handlePhoneBlur}
           ref={phoneRef}
           className={styles.input}
-          placeholder={MASK}
+          placeholder={data.form.phone.mask}
           type="text"
           name="phone"
           required
         />
       </label>
       <label className={styles.wrap}>
-        <span className={styles.label}>Ваше имя</span>
+        <span className={styles.label}>{data.form.name.label}</span>
         <input
           value={name}
           onChange={updateName}
           className={styles.input}
           type="text"
           name="name"
-          placeholder="Введите имя"
+          placeholder={data.form.name.placeholder}
           />
       </label>
-      <Button tag="button" type="submit" disabled={loading} className={styles.submit}>Записаться на занятие</Button>
+      <Button tag="button" type="submit" disabled={loading} className={styles.submit}>{data.form.cta}</Button>
+      <Modal
+        isOpen={showModal}
+        onClose={handleModalClose}
+        text={modalData.text}
+        buttonText={modalData.button}
+      />
     </form>
   )
 }
