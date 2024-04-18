@@ -10,6 +10,8 @@ import { useDataContext } from "@/contexts";
 import { Text } from '../../components';
 import styles from './index.module.css';
 
+const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
+
 SwiperCore.use([Pagination]);
 
 
@@ -60,7 +62,7 @@ export const How = () => {
 
     // Функция для получения URL миниатюры YouTube видео по его идентификатору
     const getThumbnailUrl = async (videoId: string) => {
-        const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=snippet&key=AIzaSyBdg7x6owYbb_7iVE_Hjw0cvyfFqpNraIU`);
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=snippet&key=${apiKey}`);
         const data = await response.json();
         return data.items[0].snippet.thumbnails.default.url;
     };
