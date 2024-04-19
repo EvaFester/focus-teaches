@@ -23,7 +23,9 @@ phone: ${order.phone}
       // hack to avoid google spreadsheet formulas
       ' ' + order.phone,
       new Date().toLocaleString('ru-RU', { timeZone: getConfig().TIMEZONE }),
-    ])
+    ]).catch((error) => {
+      console.error('Database insert error', error)
+    })
 
     console.log('Order success', order);
 

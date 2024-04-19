@@ -45,7 +45,7 @@ export const Form = () => {
 
     let digitIndex = 0
 
-    let result = MASK.replaceAll(maskPlug, (plug) => {
+    const result = mask.replaceAll(maskPlug, (plug) => {
       if (digits[digitIndex]) {
         return digits[digitIndex++]
       }
