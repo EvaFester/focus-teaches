@@ -75,7 +75,7 @@ export const Form = () => {
   async function handleSubmit(evt: FormEvent<HTMLFormElement>) {
     evt.preventDefault()
 
-    if (phone.length < MASK.length || !name.length) {
+    if (phone.length < mask.length || !name.length) {
       return
     }
 
@@ -98,7 +98,7 @@ export const Form = () => {
         throw new Error('no success')
       }
 
-      setPhone(MASK)
+      setPhone(mask)
       setName('')
       setShowModal(true)
       setIsError(false)
