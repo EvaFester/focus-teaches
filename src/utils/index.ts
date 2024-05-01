@@ -1,2 +1,5 @@
 export * from './handle-anchor-click'
 export * from './render-line-breaks'
+export * from './get-thumbnail-url'
+export * from './get-youtube-video-id'
+export * from './fetch-videos'

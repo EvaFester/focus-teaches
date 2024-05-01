@@ -83,30 +83,13 @@
   "gallery": {
     "title": "Как проходят занятия",
     "subtitle": "Тренировки на свежем воздухе в группах и индивидуально с тренером",
-    "items": [{
-        "type": "video",
-        "url": "https://www.youtube.com/embed/-OXJmnBXQ6w?si=IX-lNfPsqZ6qn_SS"
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/watch?v=BNyH4dw1B_s"
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/embed/YUVf0AFkn1Y?si=_I8L8F79HWvC3N7T"
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/embed/O8D-2Vh2ivw?si=Ty6gsL84fDlXxaEB"
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/watch?v=BNyH4dw1B_s"
-      },
-      {
-        "type": "video",
-        "url": "https://www.youtube.com/embed/vMKtE1KLkjc?si=7YtQKYC3uH2SIH-6"
-      }
+    "items": [
+      "https://www.youtube.com/embed/-OXJmnBXQ6w?si=IX-lNfPsqZ6qn_SS",
+      "https://www.youtube.com/watch?v=BNyH4dw1B_s",
+      "https://www.youtube.com/embed/YUVf0AFkn1Y?si=_I8L8F79HWvC3N7T",
+      "https://www.youtube.com/embed/O8D-2Vh2ivw?si=Ty6gsL84fDlXxaEB",
+      "https://www.youtube.com/watch?v=BNyH4dw1B_s",
+      "https://www.youtube.com/embed/vMKtE1KLkjc?si=7YtQKYC3uH2SIH-6"
     ]
   },
   "catalog": {
