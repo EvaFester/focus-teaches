@@ -1,0 +1,24 @@
+name: CI
+run-name: ${{ github.actor }} is running a pipeline
+on:
+  push:
+  pull_request:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20.12.2
+
+      - name: Checkout Commit
+        uses: actions/checkout@v2
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - run: echo "This job's status is ${{ job.status }}."
