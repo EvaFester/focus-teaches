@@ -13,20 +13,24 @@ import { getYoutubeVideoId, fetchVideos } from '@/utils';
 
 SwiperCore.use([Pagination]);
 
-
-// Пользовательский хук для получения миниатюр YouTube видео из контекста данных и установки их в состояние
-const useGalleryEffect = (data: any, setVideos: any) => {
-    useEffect(() => {
-        if (data) {
-            fetchVideos(data, setVideos);
-        }
-    }, [data, setVideos]);
-};
+interface Video {
+    id: string;
+    thumbnail: string;
+    // Добавьте другие поля, если они есть
+}
 
 export const Gallery = () => {
     const data = useDataContext();
-    const [videos, setVideos] = useState<any[]>([]);
-    const [selectedVideoId, setSelectedVideoId] = useState(data ? getYoutubeVideoId(data.gallery.items[0]) : ''); // Изменение этой строки
+    const [videos, setVideos] = useState<Video[]>([]);
+    const [selectedVideoId, setSelectedVideoId] = useState(() => data ? getYoutubeVideoId(data.gallery.items[0]) || "" : "");
+
+    const useGalleryEffect = (data: any, setVideos: any) => {
+        useEffect(() => {
+            if (data) {
+                fetchVideos(data, setVideos);
+            }
+        }, [data, setVideos]);
+    };
 
     useGalleryEffect(data, setVideos);
 
@@ -47,7 +51,6 @@ export const Gallery = () => {
                     slidesPerView={6}
                     className={styles.list}
                 >
-
                     {videos.map((video, index) => (
                         <SwiperSlide className={styles.thumbnail} key={index}>
                             <img className={styles.img}

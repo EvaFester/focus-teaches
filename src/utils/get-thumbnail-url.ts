@@ -9,8 +9,11 @@ export const getThumbnailUrl = async (videoId: string) => {
         }
         const data = await response.json();
         return data.items[0].snippet.thumbnails.default.url;
-    } catch (error: any) {
-        console.error('Error fetching thumbnail URL:', (error as Error).message);
-        return null;
+    } catch (error) {
+        let message: string = '';
+        if (error instanceof Error) {
+            message = error.message;
+        }
+        console.error('Error fetching thumbnail URL:', message);
     }
 };
