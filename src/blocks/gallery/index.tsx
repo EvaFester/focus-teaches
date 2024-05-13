@@ -16,7 +16,12 @@ SwiperCore.use([Pagination]);
 interface Video {
     id: string;
     thumbnail: string;
-    // Добавьте другие поля, если они есть
+}
+
+interface GalleryData {
+    gallery: {
+        items: string[];
+    };
 }
 
 export const Gallery = () => {
@@ -24,7 +29,8 @@ export const Gallery = () => {
     const [videos, setVideos] = useState<Video[]>([]);
     const [selectedVideoId, setSelectedVideoId] = useState(() => data ? getYoutubeVideoId(data.gallery.items[0]) || "" : "");
 
-    const useGalleryEffect = (data: any, setVideos: any) => {
+
+    const useGalleryEffect = (data: GalleryData | null, setVideos: (videos: Video[]) => void) => {
         useEffect(() => {
             if (data) {
                 fetchVideos(data, setVideos);

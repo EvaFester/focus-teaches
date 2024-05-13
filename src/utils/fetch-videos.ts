@@ -27,4 +27,4 @@ export const fetchVideos = async (data: GalleryData, setVideos: (videos: Video[]
     })
   );
   setVideos(videos.filter(Boolean) as Video[]);
-};;
+};
