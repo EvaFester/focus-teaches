@@ -1,6 +1,6 @@
 import { DataContextProvider } from '@/contexts'
 import data from '../data.json'
-import { Header, Hero, Features, Form, Profile, Contact, Catalog, How, Location, Gallery } from '@/blocks'
+import { Header, Hero, Features, Form, Profile, Contact, Catalog, Gallery, Location } from '@/blocks'
 
 export default function Home() {
   return (
@@ -10,8 +10,7 @@ export default function Home() {
         <Hero />
         <Features />
         <Profile />
-        <How />
-        <Gallery />
+        <Gallery/>
         <Catalog type="children" />
         <Catalog type="adults" />
         <Location />
